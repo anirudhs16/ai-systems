@@ -1,24 +1,13 @@
 title: "AI Systems"
-description: "A semiconductor engineer's notes on AI infrastructure — written from the transistor up."
+description: "AI infrastructure, inference engineering, and systems architecture."
 author: "Anirudh"
-email: ""
-url: ""
-baseurl: ""
+baseurl: "/ai-systems"
+url: "https://anirudhs16.github.io"
 
-theme: minima
+linkedin: "https://www.linkedin.com/in/YOUR_LINKEDIN_HANDLE"
+github: "https://github.com/anirudhs16"
+
+permalink: /:year/:month/:day/:title/
 
 plugins:
   - jekyll-feed
-  - jekyll-seo-tag
-
-permalink: /blog/:year/:month/:title/
-
-minima:
-  skin: dark
-
-header_pages:
-  - about.md
-
-social_links:
-  - { platform: linkedin, user_url: "https://www.linkedin.com/in/anirudhs16" }
-  - { platform: github, user_url: "https://github.com/anirudhs16" }

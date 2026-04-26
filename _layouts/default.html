@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>{% if page.title %}{{ page.title }} — {{ site.title }}{% else %}{{ site.title }}{% endif %}</title>
+  <meta name="description" content="{% if page.excerpt %}{{ page.excerpt | strip_html | truncate: 160 }}{% else %}{{ site.description }}{% endif %}">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="{{ '/assets/css/main.css' | relative_url }}">
+</head>
+<body>
+
+<nav>
+  <div class="nav-inner">
+    <a href="{{ '/' | relative_url }}" class="nav-brand">
+      <span class="nav-brand-dot"></span>
+      AI Systems
+    </a>
+    <div class="nav-links">
+      <a href="{{ '/' | relative_url }}">Writing</a>
+      <a href="{{ '/about/' | relative_url }}">About</a>
+      <a href="{{ site.github }}" target="_blank" rel="noopener" class="nav-ext">GitHub</a>
+      <a href="{{ site.linkedin }}" target="_blank" rel="noopener" class="nav-ext">LinkedIn</a>
+    </div>
+  </div>
+</nav>
+
+<main>
+  {{ content }}
+</main>
+
+<footer>
+  <div class="footer-inner">
+    <p>AI Systems &nbsp;·&nbsp; Anirudh</p>
+    <p>
+      <a href="{{ site.github }}" target="_blank" rel="noopener">GitHub</a>
+      &nbsp;·&nbsp;
+      <a href="{{ site.linkedin }}" target="_blank" rel="noopener">LinkedIn</a>
+    </p>
+  </div>
+</footer>
+
+</body>
+</html>

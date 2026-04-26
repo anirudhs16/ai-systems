@@ -8,4 +8,4 @@ Writing about AI infrastructure, inference engineering, and systems architecture
 
 Weekly posts on LLM inference engineering, GPU architecture, AI systems design, and project retrospectives.
 
-[GitHub](https://github.com/anirudhs16)
+[LinkedIn](https://www.linkedin.com/in/anirudh-reddy) · [GitHub](https://github.com/anirudhs16)

@@ -22,5 +22,3 @@ Weekly posts on:
 ## About
 
 Senior software engineer with a background in semiconductor memory design. Now building production AI systems and going deep on inference engineering and AI architecture.
-
-

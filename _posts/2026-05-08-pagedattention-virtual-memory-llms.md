@@ -28,7 +28,7 @@ The result: a GPU with 40 GB of HBM might only be able to serve 10-15 concurrent
 
 ## The solution: pages, blocks, and indirection
 
-PagedAttention ([Kwon et al., 2023](https://arxiv.org/abs/2309.05852)) borrows the core insight from OS virtual memory.
+PagedAttention ([Kwon et al., 2023](https://arxiv.org/abs/2309.06180)) borrows the core insight from OS virtual memory.
 
 In an operating system, virtual memory solves the "not enough RAM" problem by breaking physical memory into fixed-size pages and mapping process address spaces onto them non-contiguously. A process thinks it has a large contiguous block of memory. The OS maintains a page table that translates virtual addresses to physical ones. The physical pages can be anywhere in RAM — scattered, reused, swapped to disk.
 

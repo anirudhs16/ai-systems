@@ -12,7 +12,7 @@ Not in CUDA. In Triton — a Python-based language that compiles to GPU assembly
 
 ## What a GPU kernel is
 
-When PyTorch executes `x + y` on two tensors, it launches a CUDA kernel — a small program that runs simultaneously across thousands of GPU cores. Each core handles a different slice of the data. The addition of a million-element vector becomes a million additions happening in parallel.
+When PyTorch executes `x + y` on two tensors, it launches a CUDA kernel — a small program that runs simultaneously across thousands of GPU cores. Triton launches many parallel program instances — each instance handles a different block of the data across the GPU's hardware resources. The addition of a million-element vector becomes a million additions happening in parallel.
 
 The PyTorch profiler session showed 1460 kernel launches for 20 generated tokens. Each of those launches was a program like this one running on the GPU. Until now I had only seen them from the outside.
 
@@ -56,7 +56,7 @@ The hardware constraints do not change. The vocabulary changes at every layer of
 
 CUDA requires C++ and deep knowledge of GPU architecture. Triton sits above CUDA — you write Python-like code and Triton compiles it to efficient GPU assembly automatically. It handles memory coalescing, shared memory management, and instruction scheduling.
 
-This is the layer where FlashAttention was implemented. PagedAttention's memory management operates at this layer. The 99× speedup measured in benchmark 02 comes partly from kernels written at this level — making better use of GPU memory hierarchy than PyTorch's default implementations.
+This is the layer where many of the performance gains behind modern AI systems happen. FlashAttention, for example, was originally implemented in CUDA — but its approach of carefully controlling how data moves between GPU memory and fast on-chip memory is exactly the kind of optimization that happens at this kernel layer. High-performance attention implementations and memory management optimizations operate at this layer. The 99× speedup measured in benchmark 02 comes partly from kernels written at this level — making better use of GPU memory hierarchy than PyTorch's default implementations.
 
 Understanding this layer does not mean writing production kernels. It means being able to read them, understand optimization decisions, and have an informed conversation about where performance comes from.
 
